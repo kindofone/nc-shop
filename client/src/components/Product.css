@@ -1,0 +1,24 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 200px;
+  padding: 15px;
+  margin-bottom: 10px;
+  align-items: flex-start;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: white;
+}
+
+.imageContainer {
+  height: 310px;
+}
+
+.imageContainer > .image {
+  width: 100%;
+}
+
+.category {
+  text-align: center;
+}
