@@ -1,23 +1,29 @@
 import {useEffect, useState} from 'react';
-import Product from './Product';
+import Products from './Products';
+import Search from './Search';
+import CategoryChooser from './CategoryChooser';
 import './App.css';
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3001')
+    fetch('http://localhost:3001?resource=products')
       .then(response => response.json())
       .then(data => setProducts(data));
   }, []);
 
   return (
     <div className="app">
-      {products.map(product => {
-        return (
-          <Product {...product} />
-        );
-      })}
+      <CategoryChooser onChange={setSelectedCategory} />
+      <Search onSearch={setSearch} />
+      <Products 
+        products={products} 
+        category={selectedCategory}
+        search={search}
+      />
     </div>
   );
 }
