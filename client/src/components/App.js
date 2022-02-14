@@ -17,8 +17,10 @@ function App() {
 
   return (
     <div className="app">
-      <CategoryChooser onChange={setSelectedCategory} />
-      <Search onSearch={setSearch} />
+      <div className='header'>
+        <CategoryChooser currentCategory={selectedCategory} onChange={setSelectedCategory} />
+        <Search currentSearch={search} onSearch={setSearch} />
+      </div>
       <Products 
         products={products} 
         category={selectedCategory}

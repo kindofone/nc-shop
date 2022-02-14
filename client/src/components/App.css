@@ -4,3 +4,9 @@
   padding: 20px;
   background: #eee;
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}

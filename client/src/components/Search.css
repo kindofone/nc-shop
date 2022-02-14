@@ -1,0 +1,14 @@
+.search {
+  font-size: 1.2em;
+  border: none;
+  border-bottom: 1px solid black;
+  background: none;
+  outline: none;
+  padding: 0 5px;
+}
+
+.search.dirty {
+  background: black;
+  color: white;
+  border-radius: 5px;
+}

@@ -1,0 +1,18 @@
+.category-chooser {
+  display: flex;
+  justify-content: center;
+}
+
+.category-button {
+  padding: 5px 10px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 5px;
+  background: none;
+}
+
+.selected-category, .category-button:hover {
+  background: black;
+  color: white;
+  cursor: pointer;
+}
