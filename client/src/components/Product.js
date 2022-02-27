@@ -1,4 +1,5 @@
 import React from 'react';
+import { useCartContext } from '../contexts/CartContext';
 import './Product.css';
 
 function Product({
@@ -9,6 +10,8 @@ function Product({
   description,
   image,
 }) {
+  const {addItem} = useCartContext();
+
   return (
     <div className='product'>
       <div className='imageContainer'>
@@ -17,7 +20,7 @@ function Product({
       <label className='category'>{category}</label>
       <h3>{title}</h3>
       <p>{description}</p>
-      <button>${price}</button>
+      <button onClick={() => addItem(id)}>${price}</button>
     </div>
   );
 }
