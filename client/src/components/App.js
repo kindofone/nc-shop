@@ -4,6 +4,7 @@ import Search from './Search';
 import CategoryChooser from './CategoryChooser';
 import './App.css';
 import {CartProvider} from '../contexts/CartContext';
+import Cart from './Cart';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -19,6 +20,7 @@ function App() {
   return (
     <CartProvider>
       <div className="app">
+        <Cart />
         <div className='header'>
           <CategoryChooser currentCategory={selectedCategory} onChange={setSelectedCategory} />
           <Search currentSearch={search} onSearch={setSearch} />

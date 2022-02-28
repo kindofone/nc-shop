@@ -10,7 +10,8 @@ function Product({
   description,
   image,
 }) {
-  const {addItem} = useCartContext();
+  const {state, addItem, removeItem} = useCartContext();
+  const {items} = state;
 
   return (
     <div className='product'>
@@ -21,6 +22,7 @@ function Product({
       <h3>{title}</h3>
       <p>{description}</p>
       <button onClick={() => addItem(id)}>${price}</button>
+      {items.includes(id) ? <button onClick={() => removeItem(id)}>Remove</button> : null}
     </div>
   );
 }
