@@ -10,7 +10,6 @@ import { Route, Routes } from 'react-router-dom';
 
 function App() {
   const [products, setProducts] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState('all');
   const [search, setSearch] = useState('');
 
   useEffect(() => {
@@ -23,18 +22,25 @@ function App() {
     <CartProvider>
       <div className="app">
         <div className='header'>
-          <CategoryChooser currentCategory={selectedCategory} onChange={setSelectedCategory} />
+          <CategoryChooser />
           <div className='header-right-side'>
             <Search currentSearch={search} onSearch={setSearch} />
             <CartButton />
           </div>
         </div>
         <Routes>
-          <Route path='/' element={<Products 
-            products={products} 
-            category={selectedCategory}
-            search={search}
-          />} />
+          <Route path='/' element={(
+            <Products 
+              products={products} 
+              search={search}
+            />
+          )} />
+          <Route path='/categories/:category' element={(
+            <Products 
+              products={products} 
+              search={search}
+            />
+          )} />
           <Route path='/cart' element={<Cart />} />
         </Routes>
       </div>
