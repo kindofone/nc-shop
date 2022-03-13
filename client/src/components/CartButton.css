@@ -1,0 +1,21 @@
+.cart-button {
+  background: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cart-button:hover {
+  background: black;
+}
+
+.cart-button img {
+  width: 100%;
+}
+
+.cart-button:hover img {
+  filter: invert(100%);
+}
